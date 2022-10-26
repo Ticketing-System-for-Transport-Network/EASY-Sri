@@ -1,5 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
-    welcome user
-    
-    @endsection
+    <h1>RCP Rajapaksha</h1>
+@endsection

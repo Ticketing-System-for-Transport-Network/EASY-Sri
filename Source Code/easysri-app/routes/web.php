@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserPagesController;
+use App\Http\Controllers\AdminDashboardController;
 
-Route::get('user/home', [UserPagesController::class, 'indexuserview'])->name('user.home');
+//Admin-Dashboard
+Route::get('/admindashboard', [AdminDashboardController::class, 'dashboardview'])->name('admindashboard');
