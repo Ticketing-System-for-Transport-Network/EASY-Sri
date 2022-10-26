@@ -1,5 +1,17 @@
 @extends('layouts.app')
-
+    <div class="container">
+        <div class="card">
+            <div class="imgBx">
+                
+            </div>
+        </div>
+    </div>
 @section('content')
-    <h1>RCP Rajapaksha</h1>
+    
 @endsection
+
+@push('css')
+    <style>
+
+    </style>
+@endpush
