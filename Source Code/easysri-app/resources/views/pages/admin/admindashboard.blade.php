@@ -19,7 +19,7 @@
                             industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                             type
                             and scrambled it to make a type specimen book.</p>
-                        <a href="#">Read More</a>
+                        <a href="{{ route('bustimeinsert') }}">Read More</a>
                     </div>
                 </div>
             </div>
@@ -95,7 +95,6 @@
     <style>
 
         body {
-            background-color: #F8F8FF;
             background-image: url('bus-back.jpg');
             background-size: 162%;
         }
