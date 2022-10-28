@@ -24,13 +24,16 @@
         
     </div>
     <div class="userinfo">
-        <h5 class="card-title mt-3"><strong>Easy-Sri Card No : </strong><small>www</small></h5>
-        <h5 class="card-title mt-1"><strong>User Name : </strong><small>www</small></h5>
-        <h5 class="card-title mt-1"><strong>User NIC : </strong><small>www</small></h5>
-        <h5 class="card-title mt-1"><strong>User Address : </strong><small>www</small></h5>
-        <h5 class="card-title mt-1"><strong>User Mobile Number : </strong></b><small>www</small></h5>
-        <h5 class="card-title mt-1"><strong>Account Created Date : </strong><small>www</small></h5>
-        <h5 class="card-title mt-1"><strong>Available Balance : </strong></b><small>www</small></h5>
+        @foreach ($userdetails as $udata)
+        <h5 class="card-title mt-3"><strong>Easy-Sri Card No : </strong><small>{{ $udata->Easysrino}}</small></h5>
+        <h5 class="card-title mt-1"><strong>User Name : </strong><small>{{ $udata->Fname}} {{ $udata->Lname}}</small></h5>
+        <h5 class="card-title mt-1"><strong>User NIC : </strong><small>{{ $udata->NIC}}</small></h5>
+        <h5 class="card-title mt-1"><strong>User Address : </strong><small>{{ $udata->Address}}</small></h5>
+        <h5 class="card-title mt-1"><strong>User Mobile Number : </strong></b><small>{{ $udata->MobNo}}</small></h5>
+        <h5 class="card-title mt-1"><strong>Account Created Date : </strong><small>{{ $udata->created_at}}</small></h5>
+        @endforeach
+        <h5 class="card-title mt-1"><strong>Available Balance : </strong></b><small>{{$totalPrice}}</small></h5>
+      
     </div>    
 
 
