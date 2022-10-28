@@ -32,7 +32,7 @@
                             class="form-control form-control-lg" id="exampleFormControlInput1" name="route_id"
                             placeholder="Enter the route no here (e.g.'A90')">
                         <br>
-                        <div class="text-danger">{{ $errors->first('route_id') }}</div>
+                        <div class="text-danger" style="font-size: 20px;">{{ $errors->first('route_id') }}</div>
                     </div>
                     <div class="row justify-content-around">
                         <div class="col-lg-6">
@@ -68,7 +68,7 @@
                                     <option value="Galle">Galle</option>
                                 </select>
                                 <br>
-                                <div class="text-danger">{{ $errors->first('dep') }}</div>
+                                <div class="text-danger" style="font-size: 20px;">{{ $errors->first('dep') }}</div>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -78,7 +78,7 @@
                                     type="time" class="form-control form-control-lg" id="exampleFormControlInput1"
                                     name="dep_time" placeholder="Enter the departure time here (e.g. 7.00 AM)">
                                 <br>
-                                <div class="text-danger">{{ $errors->first('dep_time') }}</div>
+                                <div class="text-danger" style="font-size: 20px;">{{ $errors->first('dep_time') }}</div>
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                                     <option value="Galle">Galle</option>
                                 </select>
                                 <br>
-                                <div class="text-danger">{{ $errors->first('arr') }}</div>
+                                <div class="text-danger" style="font-size: 20px;">{{ $errors->first('arr') }}</div>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -126,7 +126,7 @@
                                     type="time" class="form-control form-control-lg" id="exampleFormControlInput1"
                                     name="arr_time" placeholder="Enter the arrival time here (e.g. 7.00 AM)">
                                 <br>
-                                <div class="text-danger">{{ $errors->first('arr_time') }}</div>
+                                <div class="text-danger" style="font-size: 20px;">{{ $errors->first('arr_time') }}</div>
                             </div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                                     type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
                                     name="dis" placeholder="Enter the distance here (e.g. 10)">
                                 <br>
-                                <div class="text-danger">{{ $errors->first('dis') }}</div>
+                                <div class="text-danger" style="font-size: 20px;">{{ $errors->first('dis') }}</div>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -148,7 +148,7 @@
                                     type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
                                     name="dis_time" placeholder="Enter the time taken here (e.g. 10)">
                                 <br>
-                                <div class="text-danger">{{ $errors->first('dis_time') }}</div>
+                                <div class="text-danger" style="font-size: 20px;">{{ $errors->first('dis_time') }}</div>
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                                     <option value="PVT" style="color: #FFA500;">PVT</option>
                                 </select>
                                 <br>
-                                <div class="text-danger">{{ $errors->first('bus_t') }}</div>
+                                <div class="text-danger" style="font-size: 20px;">{{ $errors->first('bus_t') }}</div>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -182,7 +182,7 @@
                                         (Normal Fare*3)</option>
                                 </select>
                                 <br>
-                                <div class="text-danger">{{ $errors->first('ser_t') }}</div>
+                                <div class="text-danger" style="font-size: 20px;">{{ $errors->first('ser_t') }}</div>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -192,7 +192,7 @@
                                     class="form-control form-control-lg" id="exampleFormControlInput1" name="no_bus"
                                     placeholder="Enter the no of buses here (e.g. 15)">
                                 <br>
-                                <div class="text-danger">{{ $errors->first('no_bus') }}</div>
+                                <div class="text-danger" style="font-size: 20px;">{{ $errors->first('no_bus') }}</div>
                             </div>
                         </div>
                     </div>
@@ -202,7 +202,7 @@
                             type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
                             name="charge" placeholder="Enter the minimum charge per kilometer here (e.g. 40)">
                         <br>
-                        <div class="text-danger">{{ $errors->first('charge') }}</div>
+                        <div class="text-danger" style="font-size: 20px;">{{ $errors->first('charge') }}</div>
                     </div>
                 </div>
             </section>
@@ -212,7 +212,7 @@
                 <p><input type="submit" title="Click this button to save the entered data."
                         class="btn btn-warning btn-lg" value="ADD DETAILS">
                     <a title="Click this button to view the entered data." class="btn btn-warning btn-lg btn-block"
-                        href="#" role="button">VIEW
+                        href="{{ route('bustimeview') }}" role="button">VIEW
                         DETAILS</a>
                 </p>
             </div>
@@ -550,12 +550,6 @@
             color: #000;
             font-size: 35px;
             font-weight: 500;
-        }
-
-        h5 {
-            text-align: center;
-            font-size: 35px;
-            color: #0f0;
         }
 
         .text-button {

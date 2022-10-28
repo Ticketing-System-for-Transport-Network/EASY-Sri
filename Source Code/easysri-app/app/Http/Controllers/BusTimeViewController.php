@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class BusTimeViewController extends Controller
 {
-    public function busview()
+    public function bustimetableview()
     {
         return view('pages.admin.bustimetableview');
     }
