@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\BusTimeInsertController;
 use App\Http\Controllers\BusTimeViewController;
 
+
 //Admin-Dashboard
 Route::get('/admindashboard', [AdminDashboardController::class, 'dashboardview'])->name('admindashboard');
 
@@ -22,3 +23,4 @@ Route::prefix('/bustimeview')->group(function () {
     Route::get('/{bus_id}/delete', [BusTimeViewController::class, "delete"])->name('bustimeview.delete');
     Route::get('/{bus_id}/done', [BusTimeViewController::class, "done"])->name('bustimeview.done');
 }); 
+
