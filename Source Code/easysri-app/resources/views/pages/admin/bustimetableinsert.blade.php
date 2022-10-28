@@ -4,7 +4,19 @@
     <div class="logo">
         <img src="logo.png" alt="logo" />
     </div>
-    <form method="post" action="#" role="form">
+    <!--validation part-->
+    @if ($errors->any())
+    @endif
+    <!--generate successfull message-->
+    @if (session('message'))
+        <div class="alert show">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg-text">{{ session('message') }}</span>
+            <span class="close-btn">
+            </span>
+        </div>
+    @endif
+    <form method="post" action="{{ route('bustimeinsert.store') }}" role="form">
         {{ csrf_field() }}
         <div class="container">
             <div class="row">
@@ -17,17 +29,17 @@
                     <div class="mb-5">
                         <label for="exampleFormControlInput1" class="form-label">Route No</label>
                         <input title="This includes relevant route numbers for the destination." type="text"
-                            class="form-control form-control-lg" id="exampleFormControlInput1" name=""
+                            class="form-control form-control-lg" id="exampleFormControlInput1" name="route_id"
                             placeholder="Enter the route no here (e.g.'A90')">
                         <br>
-                        <div class="text-danger"></div>
+                        <div class="text-danger">{{ $errors->first('route_id') }}</div>
                     </div>
                     <div class="row justify-content-around">
                         <div class="col-lg-6">
                             <div class="mb-5">
                                 <label for="exampleFormControlInput1" class="form-label">Departure</label>
                                 <select title="Select the departure place of the respective buses from the drop-down list."
-                                    class="form-select form-select-lg mb-3" name="">
+                                    class="form-select form-select-lg mb-3" name="dep">
                                     <option value="">Open this departure place select menu</option>
                                     <option value="Jaffna">Jaffna</option>
                                     <option value="Kilinochchi">Kilinochchi</option>
@@ -56,7 +68,7 @@
                                     <option value="Galle">Galle</option>
                                 </select>
                                 <br>
-                                <div class="text-danger"></div>
+                                <div class="text-danger">{{ $errors->first('dep') }}</div>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -64,9 +76,9 @@
                                 <label for="exampleFormControlInput1" class="form-label">Departure Time</label>
                                 <input title="This includes the departure time of the bus related to the timetable."
                                     type="time" class="form-control form-control-lg" id="exampleFormControlInput1"
-                                    name="" placeholder="Enter the departure time here (e.g. 7.00 AM)">
+                                    name="dep_time" placeholder="Enter the departure time here (e.g. 7.00 AM)">
                                 <br>
-                                <div class="text-danger"></div>
+                                <div class="text-danger">{{ $errors->first('dep_time') }}</div>
                             </div>
                         </div>
                     </div>
@@ -75,7 +87,7 @@
                             <div class="mb-5">
                                 <label for="exampleFormControlInput1" class="form-label">Arrival</label>
                                 <select title="Select the arrival place of the respective buses from the drop-down list."
-                                    class="form-select form-select-lg mb-3" name="">
+                                    class="form-select form-select-lg mb-3" name="arr">
                                     <option value="">Open this arrival place select menu</option>
                                     <option value="Jaffna">Jaffna</option>
                                     <option value="Kilinochchi">Kilinochchi</option>
@@ -104,7 +116,7 @@
                                     <option value="Galle">Galle</option>
                                 </select>
                                 <br>
-                                <div class="text-danger"></div>
+                                <div class="text-danger">{{ $errors->first('arr') }}</div>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -112,9 +124,9 @@
                                 <label for="exampleFormControlInput1" class="form-label">Arrival Time</label>
                                 <input title="This includes the arrival time of the bus related to the timetable."
                                     type="time" class="form-control form-control-lg" id="exampleFormControlInput1"
-                                    name="" placeholder="Enter the arrival time here (e.g. 7.00 AM)">
+                                    name="arr_time" placeholder="Enter the arrival time here (e.g. 7.00 AM)">
                                 <br>
-                                <div class="text-danger"></div>
+                                <div class="text-danger">{{ $errors->first('arr_time') }}</div>
                             </div>
                         </div>
                     </div>
@@ -124,9 +136,9 @@
                                 <label for="exampleFormControlInput1" class="form-label">Distance (KM)</label>
                                 <input title="This includes the distance of the destination related to the timetable."
                                     type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
-                                    name="" placeholder="Enter the distance here (e.g. 10)">
+                                    name="dis" placeholder="Enter the distance here (e.g. 10)">
                                 <br>
-                                <div class="text-danger"></div>
+                                <div class="text-danger">{{ $errors->first('dis') }}</div>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -134,9 +146,9 @@
                                 <label for="exampleFormControlInput1" class="form-label">Time Taken (Minutes)</label>
                                 <input title="This includes the time taken to the destination related to the timetable."
                                     type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
-                                    name="" placeholder="Enter the time taken here (e.g. 10)">
+                                    name="dis_time" placeholder="Enter the time taken here (e.g. 10)">
                                 <br>
-                                <div class="text-danger"></div>
+                                <div class="text-danger">{{ $errors->first('dis_time') }}</div>
                             </div>
                         </div>
                     </div>
@@ -145,20 +157,20 @@
                             <div class="mb-5">
                                 <label for="exampleFormControlInput1" class="form-label">Bus Type</label>
                                 <select title="Select the bus type from the drop-down list."
-                                    class="form-select form-select-lg mb-3" name="">
+                                    class="form-select form-select-lg mb-3" name="bus_t">
                                     <option value="">Open this bus type select menu</option>
                                     <option value="CTB" style="color: red;">CTB</option>
                                     <option value="PVT" style="color: #FFA500;">PVT</option>
                                 </select>
                                 <br>
-                                <div class="text-danger"></div>
+                                <div class="text-danger">{{ $errors->first('bus_t') }}</div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="mb-5">
                                 <label for="exampleFormControlInput1" class="form-label">Service Type</label>
                                 <select title="Select the service bus type from the drop-down list."
-                                    class="form-select form-select-lg mb-3" name="">
+                                    class="form-select form-select-lg mb-3" name="ser_t">
                                     <option value="">Open this service type select menu</option>
                                     <option value="Normal Service" style="color: #FFA500;">Normal Service (Normal Fare)
                                     </option>
@@ -170,27 +182,27 @@
                                         (Normal Fare*3)</option>
                                 </select>
                                 <br>
-                                <div class="text-danger"></div>
+                                <div class="text-danger">{{ $errors->first('ser_t') }}</div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="mb-5">
                                 <label for="exampleFormControlInput1" class="form-label">No Of Buses</label>
                                 <input title="This includes the no of buses related to the timetable." type="text"
-                                    class="form-control form-control-lg" id="exampleFormControlInput1" name=""
+                                    class="form-control form-control-lg" id="exampleFormControlInput1" name="no_bus"
                                     placeholder="Enter the no of buses here (e.g. 15)">
                                 <br>
-                                <div class="text-danger"></div>
+                                <div class="text-danger">{{ $errors->first('no_bus') }}</div>
                             </div>
                         </div>
                     </div>
                     <div class="mb-5">
-                        <label for="exampleFormControlInput1" class="form-label">Minimum Charge Per Kilometre (RS)</label>
+                        <label for="exampleFormControlInput1" class="form-label">Minimum Charge Per Kilometer (RS)</label>
                         <input title="This includes the minimum charge per kilometre related to the destination."
                             type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
-                            name="" placeholder="Enter the minimum charge per kilometre here (e.g. 40)">
+                            name="charge" placeholder="Enter the minimum charge per kilometer here (e.g. 40)">
                         <br>
-                        <div class="text-danger"></div>
+                        <div class="text-danger">{{ $errors->first('charge') }}</div>
                     </div>
                 </div>
             </section>
@@ -556,6 +568,69 @@
             color: #000;
             text-decoration: none;
             font-style: italic;
+        }
+
+        .alert {
+            background: #ffdb9b;
+            padding: 20px 40px;
+            min-width: 420px;
+            position: absolute;
+            overflow: hidden;
+            right: 0px;
+            top: 70px;
+            border-radius: 4px;
+            border-left: 8px solid #ffa502;
+        }
+
+        .alert.show {
+            animation: show_slide 1s ease forwards;
+        }
+
+        @keyframes show_slide {
+            0% {
+                transform: translateX(100%);
+            }
+
+            40% {
+                transform: translateX(-10%);
+            }
+
+            80% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-10px);
+            }
+        }
+
+        .alert .fa-exclamation-circle {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ce8500;
+            font-size: 30px;
+        }
+
+        .alert .msg-text {
+            padding: 0 20px;
+            font-size: 18px;
+            color: #ce8500;
+        }
+
+        .alert .close-btn {
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ffd080;
+            padding: 32px 18px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background: #ffc766;
         }
     </style>
 @endpush
