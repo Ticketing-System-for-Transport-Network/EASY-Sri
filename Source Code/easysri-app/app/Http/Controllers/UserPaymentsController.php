@@ -23,15 +23,10 @@ class UserPaymentsController extends ParentController
 
 
         $UserpaymentObj->userregid=auth()->user()->id;
-        $tempid=auth()->user()->id;
-        //  $tempesay_no = UserRegTopup::find($tempid)->get('Easysrino');
-         $tempesay_no = UserRegTopup::where('login_id',$tempid)->get("Easysrino");
-        // $result = DB::table('user_reg_topups')->select('Easysrino')->where('login_id', $tempid);
-
-        $UserpaymentObj->Easysrino=$tempesay_no;
-       
-
-
+        $tempid=auth()->user()->id;     
+        $tempesay_no = UserRegTopup::where('login_id',$tempid)->get('Easysrino');
+        $str_numbers_only = preg_replace("/[^\d]/", "", $tempesay_no);
+        $UserpaymentObj->Easysrino=$str_numbers_only;
         $UserpaymentObj->owner = $request->owner;
         $UserpaymentObj->cardnumber = $request->cardnumber;
         $UserpaymentObj->amount = $request->amount;

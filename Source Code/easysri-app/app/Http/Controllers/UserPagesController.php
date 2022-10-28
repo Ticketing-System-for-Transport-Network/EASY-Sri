@@ -11,11 +11,17 @@ class UserPagesController extends ParentController
 {
    
     public function indexuserRegandTopup(){
+       
         return view('pages.user.userRegandTopup');
     }
 
     public function indexuserpurchase(){
-        return view('pages.user.userpurchase');
+        $tempid=auth()->user()->id;  
+        $userdetails = UserRegTopup::where('login_id',$tempid)->get();
+        $initial = UserRegTopup::where('login_id',$tempid)->sum('Initalpay');
+        $tamount = Userpayment::where('userregid',$tempid)->sum('amount');
+        $totalPrice= $initial+$tamount;
+        return view('pages.user.userpurchase', compact('userdetails'))->with('totalPrice',$totalPrice);
     }
     public function indexdashboard(){
         $role = Auth::user()->role;
