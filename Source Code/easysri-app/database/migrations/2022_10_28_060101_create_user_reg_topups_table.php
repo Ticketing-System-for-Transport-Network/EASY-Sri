@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('Easysrino');
             $table->string('Fname');
             $table->string('Lname');
-            $table->string('NIC');
+            $table->string('NIC')->unique();
             $table->string('Address');
             $table->string('City');
             $table->string('Zipcode');
