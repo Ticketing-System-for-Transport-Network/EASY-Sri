@@ -24,9 +24,9 @@ class BusTimeTable extends Model
         'done'
     ];
 
-    /*public function allActive()
+    public function allActive()
     {
         return $this->where('done', 1)->get();
-    }*/
+    }
 
 }
