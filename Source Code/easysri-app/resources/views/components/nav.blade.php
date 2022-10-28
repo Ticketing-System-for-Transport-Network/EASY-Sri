@@ -1,15 +1,15 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-3 mb-lg-0">
           <li class="nav-item">
             <a class="func-link" href="/">Easy-Sri</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="#">Top-Up</a>
+            <a class="func-link" href="{{ route('userRegandTopup') }}">Apply Easy-Sri</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="#">Shedule</a>
+            <a class="func-link" href="{{ route('userpurchase') }}">Top-UP</a>
           </li>
           <li class="nav-item">
             <a class="func-link" href="#">Maps & Routes</a>

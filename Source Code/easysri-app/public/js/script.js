@@ -48,15 +48,30 @@ $(function() {
         var isCardValid = $.payform.validateCardNumber(cardNumber.val());
         var isCvvValid = $.payform.validateCardCVC(CVV.val());
 
-        if(owner.val().length < 5){
-            alert("Wrong owner name");
+        if(owner.val().length < 5){       
+            // swal("Card Holder is Name Invalid !");
+            swal({
+                title: "Wrong Card Deatils",
+                text: "Card Holder is Name Invalid!",
+                icon: "error",
+              });
         } else if (!isCardValid) {
-            alert("Wrong card number");
+            // alert("Wrong card number");
+            swal({
+                title: "Wrong Card Deatils",
+                text: "Card Number is  Invalid!",
+                icon: "error",
+              });
         } else if (!isCvvValid) {
-            alert("Wrong CVV");
+            // alert("Wrong CVV");
+            swal({
+                title: "Wrong Card Deatils",
+                text: "Card CVV is  Invalid!",
+                icon: "error",
+              });
         } else {
             // Everything is correct. Add your form submission code here.
-            alert("Everything is correct");
+            // alert("Everything is correct");
         }
     });
 });

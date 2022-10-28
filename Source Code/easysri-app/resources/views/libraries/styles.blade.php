@@ -13,7 +13,7 @@
 
 <style>
     nav {
-        height: 80px;
+        height: 100px;
         background-color: #111;
     }
 

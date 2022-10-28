@@ -24,8 +24,8 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script
+{{-- <script
   src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
   integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> --}}
 @stack('js')
