@@ -18,25 +18,25 @@
             <a class="func-link" href="#">Fares</a>
           </li>
           
-          {{-- @if (Auth::user())
+          @if (Auth::user())
           
           <form method="POST" action="{{ route('logout') }}" x-data>
             @csrf
             <li class="nav-item">
-            <x-jet-dropdown-link  class="func-link" style="margin-left: 600px" href="{{ route('logout') }}"
+            <x-jet-dropdown-link  class="func-link" style="margin-left: 935px" href="{{ route('logout') }}"
                      @click.prevent="$root.submit();">
                 {{ __('Log Out') }}
             </x-jet-dropdown-link > </li>
         </form>
           @else
           <li class="nav-item">
-            <a class="func-link" href="{{ route('login') }}" style="margin-left: 560px;">Login</a>
+            <a class="func-link" href="{{ route('login') }}" style="margin-left: 850px;">Login</a>
           </li>
 
           <li class="nav-item">
             <a class="func-link" href="{{ route('register') }}" style="margin-left: 10px;">Register</a>
           </li>
-          @endif --}}
+          @endif
          
       
         </ul>

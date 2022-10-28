@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('user_reg_topups', function (Blueprint $table) {
             $table->id('userregid');
             $table->string('Easysrino');
+            $table->unsignedBigInteger('login_id');
+            $table->string('login_email')->unique();
             $table->string('Fname');
             $table->string('Lname');
             $table->string('NIC')->unique();
@@ -25,6 +27,8 @@ return new class extends Migration
             $table->string('MobNo');
             $table->double('Initalpay');
             $table->timestamps();
+
+            $table->foreign('login_id')->references('id')->on('users');
         });
     }
 
