@@ -41,32 +41,30 @@
                                 </span>
                             @else
                                 <span class="bg-primary">
-                                    <h6>Active</h6>
+                                    <h5>Active</h5>
                                 </span>
                             @endif
                             <input type="hidden" class="serDel_val" value="{{ $bus->id }}">
-                            <a class="btn btn-warning btn-sm btn-block serviceDeleteBtn" role="button"
-                                title="Unnecessary or incorrect rocket information can be deleted."
+                            <a class="serviceDeleteBtn" role="button"
+                                title="Unnecessary or incorrect information can be deleted."
                                 href="{{ route('bustimeview.delete', $bus->id) }}">
-                                <h6>Delete</h6>
+                                <h5>Delete</h5>
                             </a>
-                            @if ($task->done == 0)
-                                <a class="btn btn-warning btn-sm btn-block"
-                                    href="{{ route('rocketview.done', $task->id) }}" role="button"
+                            @if ($bus->done == 0)
+                                <a href="{{ route('bustimeview.done', $bus->id) }}" role="button"
                                     title="Only necessary data can be publish in the user interface.">
-                                    <h6>PUBLISH</h6>
+                                    <h5>Publish</h5>
                                 </a>
                             @else
-                                <a class="btn btn-warning btn-sm btn-block"
-                                    href="{{ route('rocketview.done', $task->id) }}" role="button"
+                                <a href="{{ route('bustimeview.done', $bus->id) }}" role="button"
                                     title="Only necessary data can be unpublish in the user interface.">
-                                    <h6>DRAFT</h6>
+                                    <h5>Draft</h5>
                                 </a>
                             @endif
-                            <a class="btn btn-warning btn-sm btn-block" href="javascript:void(0)" role="button"
+                            <a href="javascript:void(0)" role="button"
                                 title="Directs to the update interface to edit the data."
-                                onclick="rocketEditModal({{ $task->id }})">
-                                <h6>EDIT</h6>
+                                onclick="busEditModal({{ $bus->id }})">
+                                <h5>Edit</h5>
                             </a>
                         </div>
                     </div>
@@ -76,21 +74,21 @@
     @endforeach
     <div class="col-md-12 text-center">
         <div class="btn">
-            <a title="Click this button to save the entered data." href="{{ route('rocketinsert') }}" role="button">ADD
+            <a title="Click this button to save the entered data." href="{{ route('bustimeinsert') }}" role="button">ADD
                 NEW DETAILS</a>
         </div>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="rocketEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="rocketEditLabel" aria-hidden="true">
+    <div class="modal fade" id="busEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="busEditLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="rocketEditLabel">Rocket Details Update</h4>
+                    <h4 class="modal-title" id="busEditLabel">Timetable Details Update</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="rocketEditContent">
+                <div class="modal-body" id="busEditContent">
 
                 </div>
             </div>
@@ -225,6 +223,60 @@
             color: #fff;
             font-weight: 400;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .alert {
+            background: #ffdb9b;
+            padding: 20px 40px;
+            min-width: 420px;
+            position: absolute;
+            overflow: hidden;
+            right: 0px;
+            top: 80px;
+            border-radius: 4px;
+            border-left: 8px solid #ffa502;
+        }
+        .alert.show {
+            animation: show_slide 1s ease forwards;
+        }
+        @keyframes show_slide {
+            0% {
+                transform: translateX(100%);
+            }
+            40% {
+                transform: translateX(-10%);
+            }
+            80% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-10px);
+            }
+        }
+        .alert .fa-exclamation-circle {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ce8500;
+            font-size: 30px;
+        }
+        .alert .msg-text {
+            padding: 0 20px;
+            font-size: 18px;
+            color: #ce8500;
+        }
+        .alert .close-btn {
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ffd080;
+            padding: 32px 18px;
+            cursor: pointer;
+        }
+        .close-btn:hover {
+            background: #ffc766;
         }
     </style>
 @endpush
