@@ -5,6 +5,8 @@ use App\Http\Controllers\AdminDashboardController;
 
 use App\Http\Controllers\UserPagesController;
 use App\Http\Controllers\UserRegandTopupController;
+use App\Http\Controllers\UserPaymentsController;
+
 
 use App\Http\Controllers\BusTimeInsertController;
 use App\Http\Controllers\BusTimeViewController;
@@ -28,8 +30,12 @@ Route::get('/bustimeview', [BusTimeViewController::class, 'busview'])->name('bus
 
 //User Dashboard
 Route::get('/', [UserPagesController::class, 'indexuserdashboard'])->name('userdashboard');
+
 //User Purchase
 Route::get('/userpurchase', [UserPagesController::class, 'indexuserpurchase'])->name('userpurchase');
+//save top-up purchase
+Route::post('/savetopup', [UserPaymentsController::class, 'storetopup'])->name('storeusertopup');
+
 //User Reg and top-up
 Route::get('/userRegandTopup', [UserPagesController::class, 'indexuserRegandTopup'])->name('userRegandTopup');
 //user reg and top up store
