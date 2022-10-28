@@ -2,59 +2,57 @@
 
 namespace domain\Services;
 
-use App\Models\Rocket;
-use App\Models\Images;
-
-class RocketViewService
+use App\Models\BusTimeTable;
+class BusTimeViewService
 {
-    protected $task;
+    protected $bus;
 
     public function __construct()
     {
-        $this->task = new Rocket();
+        $this->bus = new BusTimeTable();
     }
 
     public function all()
     {
-        return $this->task->all();
+        return $this->bus->all();
     }
 
-    public function get($task_id)
+    public function get($bus_id)
     {
-        return $this->task->find($task_id);
+        return $this->bus->find($bus_id);
     }
 
     public function allActive()
     {
-        return $this->task->allActive();
+        return $this->bus->allActive();
     }
 
-    public function delete($task_id)
+    public function delete($bus_id)
     {
-        $task = $this->task->find($task_id);
-        $task->delete();
+        $bus = $this->bus->find($bus_id);
+        $bus->delete();
     }
 
-    public function done($task_id)
+    public function done($bus_id)
     {
-        $task = $this->task->find($task_id);
-        if ($task->done == 0) {
-            $task->done = 1;
-            $task->update();
+        $bus = $this->bus->find($bus_id);
+        if ($bus->done == 0) {
+            $bus->done = 1;
+            $bus->update();
         } else {
-            $task->done = 0;
-            $task->update();
+            $bus->done = 0;
+            $bus->update();
         }
     }
 
-    public function update(array $data, $task_id)
+    public function update(array $data, $bus_id)
     {
-        $task = $this->task->find($task_id);
-        $task->update($this->edit($task, $data));
+        $bus = $this->bus->find($bus_id);
+        $bus->update($this->edit($bus, $data));
     }
 
-    protected function edit(Rocket $task, $data)
+    protected function edit(BusTimeTable $bus, $data)
     {
-        return array_merge($task->toArray(),  $data);
+        return array_merge($bus->toArray(),  $data);
     }
 }
