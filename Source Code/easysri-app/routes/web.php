@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminDashboardController;
 
 use App\Http\Controllers\UserPagesController;
+use App\Http\Controllers\UserRegandTopupController;
 
 use App\Http\Controllers\BusTimeInsertController;
 use App\Http\Controllers\BusTimeViewController;
@@ -13,6 +14,12 @@ use App\Http\Controllers\BusTimeViewController;
 Route::get('/admindashboard', [AdminDashboardController::class, 'dashboardview'])->name('admindashboard');
 
 
+Route::prefix('/bustimeinsert')->group(function () {
+    Route::get('/', [BusTimeInsertController::class, "bustimeinsertview"])->name('bustimeinsert');
+    Route::post('/store', [BusTimeInsertController::class, "store"])->name('bustimeinsert.store');
+});
+
+Route::get('/bustimeview', [BusTimeViewController::class, 'busview'])->name('bustimeview');
 
 
 
@@ -20,16 +27,14 @@ Route::get('/admindashboard', [AdminDashboardController::class, 'dashboardview']
 
 
 //User Dashboard
-Route::get('/userdashboard', [UserPagesController::class, 'indexuserdashboard'])->name('userdashboard');
+Route::get('/', [UserPagesController::class, 'indexuserdashboard'])->name('userdashboard');
 //User Purchase
 Route::get('/userpurchase', [UserPagesController::class, 'indexuserpurchase'])->name('userpurchase');
 //User Reg and top-up
 Route::get('/userRegandTopup', [UserPagesController::class, 'indexuserRegandTopup'])->name('userRegandTopup');
+//user reg and top up store
+Route::post('/saveuser', [UserRegandTopupController::class, 'storeuser'])->name('storeuserreg');
 
-Route::prefix('/bustimeinsert')->group(function () {
-    Route::get('/', [BusTimeInsertController::class, "bustimeinsertview"])->name('bustimeinsert');
-    Route::post('/store', [BusTimeInsertController::class, "store"])->name('bustimeinsert.store');
-});
 
-Route::get('/bustimeview', [BusTimeViewController::class, 'busview'])->name('bustimeview');
+
 
