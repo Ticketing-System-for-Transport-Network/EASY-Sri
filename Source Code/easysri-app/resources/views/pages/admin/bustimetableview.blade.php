@@ -44,6 +44,7 @@
                                     <h5>Active</h5>
                                 </span>
                             @endif
+                            <div>
                             <input type="hidden" class="serDel_val" value="{{ $bus->id }}">
                             <a class="serviceDeleteBtn" role="button"
                                 title="Unnecessary or incorrect information can be deleted."
@@ -66,6 +67,7 @@
                                 onclick="busEditModal({{ $bus->id }})">
                                 <h5>Edit</h5>
                             </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -283,12 +285,12 @@
 
 @push('js')
     <script>
-        function rocketEditModal(task_id) {
+        function busEditModal(bus_id) {
             var data = {
-                task_id: task_id,
+                bus_id: bus_id,
             };
             $.ajax({
-                url: "{{ route('rocketview.edit') }}",
+                url: "{{ route('bustimeview.edit') }}",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -296,8 +298,8 @@
                 dataType: '',
                 data: data,
                 success: function(response) {
-                    $('#rocketEdit').modal('show');
-                    $('#rocketEditContent').html(response);
+                    $('#busEdit').modal('show');
+                    $('#busEditContent').html(response);
                 }
             });
         }
@@ -309,7 +311,7 @@
             });
             $('.serviceDeleteBtn').click(function(e) {
                 e.preventDefault();
-                var task_id = $(this).closest("td").find('.serDel_val').val();
+                var bus_id = $(this).closest("div").find('.serDel_val').val();
                 //alert(delete_id);
                 swal({
                         title: "Are you sure?",
@@ -322,10 +324,10 @@
                         if (willDelete) {
                             var data = {
                                 "_token": $('input[name=_token]').val(),
-                                "id": task_id,
+                                "id": bus_id,
                             };
                             $.ajax({
-                                url: '/rocketview/' + task_id + '/delete/',
+                                url: '/bustimeview/' + bus_id + '/delete/',
                                 data: data,
                                 success: function(response) {
                                     swal(response.status, {
