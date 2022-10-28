@@ -16,3 +16,7 @@ Route::get('/admindashboard', [AdminDashboardController::class, 'dashboardview']
 
 //User Dashboard
 Route::get('/userdashboard', [UserPagesController::class, 'indexuserdashboard'])->name('userdashboard');
+//User Purchase
+Route::get('/userpurchase', [UserPagesController::class, 'indexuserpurchase'])->name('userpurchase');
+//User Reg and top-up
+Route::get('/userRegandTopup', [UserPagesController::class, 'indexuserRegandTopup'])->name('userRegandTopup');
