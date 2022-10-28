@@ -1,4 +1,4 @@
-<form method="post" action="{{ route('bustimeview.edit', $bus->id) }}" enctype="multipart/form-data" role="form">
+<form method="post" action="{{ route('bustimeview.update', $bus->id) }}" enctype="multipart/form-data" role="form">
     {{ csrf_field() }}
     <div class="row justify-content-around">
         <div class="col-md-8 mb-4">
@@ -13,7 +13,8 @@
         <div class="col-md-8 mb-4">
             <label for="Departure-name" class="col-form-label">Departure:</label>
             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="dep"
-                value="{{ $bus->dep }}" required>
+                required>
+                <option>{{ $bus->dep }}</option>
                 <option value="Jaffna">Jaffna</option>
                 <option value="Kilinochchi">Kilinochchi</option>
                 <option value="Mannar">Mannar</option>
@@ -39,7 +40,6 @@
                 <option value="Hambantota">Hambantota</option>
                 <option value="Matara">Matara</option>
                 <option value="Galle">Galle</option>
-            </select>
             </select>
             <br>
         </div>
@@ -58,7 +58,8 @@
         <div class="col-md-8 mb-4">
             <label for="arrival-name" class="col-form-label">Arrival:</label>
             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="arr"
-                value="{{ $bus->arr }}" required>
+                required>
+                <option>{{ $bus->arr }}</option>
                 <option value="Jaffna">Jaffna</option>
                 <option value="Kilinochchi">Kilinochchi</option>
                 <option value="Mannar">Mannar</option>
@@ -84,7 +85,6 @@
                 <option value="Hambantota">Hambantota</option>
                 <option value="Matara">Matara</option>
                 <option value="Galle">Galle</option>
-            </select>
             </select>
             <br>
         </div>
@@ -121,7 +121,8 @@
         <div class="col-md-8 mb-4">
             <label for="bustype-name" class="col-form-label">Bus Type:</label>
             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="bus_t"
-                value="{{ $bus->bus_t }}" required>
+                required>
+                <option>{{ $bus->bus_t }}</option>
                 <option value="CTB" style="color: red;">CTB</option>
                 <option value="PVT" style="color: #FFA500;">PVT</option>
             </select>
@@ -133,7 +134,8 @@
         <div class="col-md-8 mb-4">
             <label for="servicetype-name" class="col-form-label">Service Type:</label>
             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="ser_t"
-                value="{{ $bus->ser_t }}" required>
+                required>
+                <option>{{ $bus->ser_t }}</option>
                 <option value="Normal Service" style="color: #FFA500;">Normal Service (Normal Fare)
                 </option>
                 <option value="Semi Luxury Service" style="color: #FFA500;">Semi Luxury Service
