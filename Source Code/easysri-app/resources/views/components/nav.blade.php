@@ -3,19 +3,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="func-link" href="/">Home</a>
+            <a class="func-link" href="/">Easy-Sri</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="#">News Room</a>
+            <a class="func-link" href="#">Top-Up</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="#">Fly with Rocket</a>
+            <a class="func-link" href="#">Shedule</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="#">Operations and Research</a>
+            <a class="func-link" href="#">Maps & Routes</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="#">Jobs & Career</a>
+            <a class="func-link" href="#">Fares</a>
           </li>
           
           {{-- @if (Auth::user())
