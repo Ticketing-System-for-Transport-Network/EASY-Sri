@@ -36,7 +36,6 @@ class BusTimeTableFormRequest extends FormRequest
             ],
             'dep_time' => [
                 'required',
-                'time'
             ],
             'arr' => [
                 'required',
@@ -45,7 +44,6 @@ class BusTimeTableFormRequest extends FormRequest
             ],
             'arr_time' => [
                 'required',
-                'time'
             ],
             'dis' => [
                 'required',
@@ -53,7 +51,6 @@ class BusTimeTableFormRequest extends FormRequest
             ],
             'dis_time' => [
                 'required',
-                'time'
             ],
             'bus_t' => [
                 'required',
