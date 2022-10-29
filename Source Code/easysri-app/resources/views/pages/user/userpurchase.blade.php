@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<img src="../logo.png" style="width:600px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
+<img src="../logo.png" style="width:600px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo"/>
 
 
 <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -18,22 +18,30 @@
 </div>
 @endif
 <div class="container">
+ Hello {{ $name }},
+    {{-- <h4>Hello {{ $udata->Fname}} {{ $udata->Lname}},</h4> --}}
     <h1 style="color: rgb(14, 138, 96)">Welcome to Easy-sri</h1>
-    <div class="userdetails"> 
+    <div class="userdetails">     
         <h1>User Details</h1>
-        
+      @if ($totalPrice>0)
+        @foreach ($userdetails as $udata)
+       
     </div>
     <div class="userinfo">
-        @foreach ($userdetails as $udata)
+        {{-- @foreach ($userdetails as $udata) --}}
         <h5 class="card-title mt-3"><strong>Easy-Sri Card No : </strong><small>{{ $udata->Easysrino}}</small></h5>
         <h5 class="card-title mt-1"><strong>User Name : </strong><small>{{ $udata->Fname}} {{ $udata->Lname}}</small></h5>
         <h5 class="card-title mt-1"><strong>User NIC : </strong><small>{{ $udata->NIC}}</small></h5>
         <h5 class="card-title mt-1"><strong>User Address : </strong><small>{{ $udata->Address}}</small></h5>
         <h5 class="card-title mt-1"><strong>User Mobile Number : </strong></b><small>{{ $udata->MobNo}}</small></h5>
         <h5 class="card-title mt-1"><strong>Account Created Date : </strong><small>{{ $udata->created_at}}</small></h5>
-        @endforeach
         <h5 class="card-title mt-1"><strong>Available Balance : </strong></b><small>{{$totalPrice}}</small></h5>
-      
+        @endforeach
+        @else
+        <div class="space" style="padding-top: 5vh">  </div>
+        <h3 style="color: red">No User Details Available! </h3>
+        <P>Please Register To The Easy-Sri System</P>
+        @endif
     </div>    
 
 
@@ -114,6 +122,7 @@
       </div>
       
     </div>
+    
   </div>
 @endsection
 @push('js')

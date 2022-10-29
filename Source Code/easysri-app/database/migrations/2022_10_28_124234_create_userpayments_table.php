@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('userpayments', function (Blueprint $table) {
             $table->id('purchase_id');
-            $table->unsignedBigInteger('userregid');
             $table->string('Easysrino');
+            $table->unsignedBigInteger('userregid')->default(0);
             $table->string('owner');
             $table->string('cardnumber');
             $table->double('amount');
             $table->timestamps();
 
-            $table->foreign('userregid')->references('userregid')->on('user_reg_topups');
+           
         });
     }
 

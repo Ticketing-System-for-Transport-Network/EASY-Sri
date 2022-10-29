@@ -42,7 +42,7 @@ class UserPaymentsRequestForm extends FormRequest
             'amount' =>[
                 'required',
                 'numeric',
-                'min:100',
+                
                
             ], 
                   
