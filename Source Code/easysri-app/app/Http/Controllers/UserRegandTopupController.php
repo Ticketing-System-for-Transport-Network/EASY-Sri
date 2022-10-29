@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRegandTopupRequestForm;
 use App\Models\UserRegTopup;
+use App\Models\Userpayment;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
 
-class UserRegandTopupController extends Controller
+class UserRegandTopupController extends ParentController
 {
     //Store new users Details.....
     public function storeuser(UserRegandTopupRequestForm $request){
@@ -22,7 +23,8 @@ class UserRegandTopupController extends Controller
        
         $Easysrino = $easyyear.''. $easynic;
 
-
+        $UserRegTopupObj->login_id=auth()->user()->id;
+        $UserRegTopupObj->login_email=auth()->user()->email;
         $UserRegTopupObj->Easysrino = $Easysrino ;
         $UserRegTopupObj->Fname = $request->Fname;
         $UserRegTopupObj->Lname = $request->Lname;

@@ -6,6 +6,9 @@ use App\Http\Controllers\AdminDashboardController;
 
 use App\Http\Controllers\UserPagesController;
 use App\Http\Controllers\UserRegandTopupController;
+use App\Http\Controllers\UserPaymentsController;
+use App\Http\Controllers\Esay_SriHomeController;
+
 
 
 use App\Http\Controllers\BusTimeInsertController;
@@ -31,12 +34,18 @@ Route::get('/bustimeview', [BusTimeViewController::class, 'busview'])->name('bus
 
 
 
+Auth::routes();
+Route::get('/dashboard', [UserPagesController::class, 'indexdashboard'])->name('dashboard'); 
 
 
 //User Dashboard
-Route::get('/', [UserPagesController::class, 'indexuserdashboard'])->name('userdashboard');
+Route::get('/', [Esay_SriHomeController::class, 'indexuserdashboard'])->name('userdashboard');
+
 //User Purchase
 Route::get('/userpurchase', [UserPagesController::class, 'indexuserpurchase'])->name('userpurchase');
+//save top-up purchase
+Route::post('/savetopup', [UserPaymentsController::class, 'storetopup'])->name('storeusertopup');
+
 //User Reg and top-up
 Route::get('/userRegandTopup', [UserPagesController::class, 'indexuserRegandTopup'])->name('userRegandTopup');
 //user reg and top up store
@@ -55,3 +64,17 @@ Route::prefix('/bustimeview')->group(function () {
     Route::get('/{bus_id}/done', [BusTimeViewController::class, "done"])->name('bustimeview.done');
 }); 
 
+
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
