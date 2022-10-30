@@ -343,7 +343,7 @@
 @push('css')
     <style>
         body {
-            background-color: #F8F8FF;
+            background-image: linear-gradient( 92.7deg,  rgba(245,212,212,1) 8.5%, rgba(252,251,224,1) 90.2% );
         }
 
         img {
@@ -386,6 +386,7 @@
                 5px 5px 5px rgba(0, 0, 0, 0.05),
                 -5px -5px 5px rgba(255, 255, 255, 0.5);
             border-radius: 15px;
+            background-image: radial-gradient( circle farthest-corner at 10.2% 55.8%,  rgba(252,37,103,1) 0%, rgba(250,38,151,1) 46.2%, rgba(186,8,181,1) 90.1% );
         }
 
         .containers .card .box {
