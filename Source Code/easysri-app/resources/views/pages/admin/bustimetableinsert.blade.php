@@ -522,7 +522,7 @@
 @push('css')
     <style>
         body {
-            background-color: #F8F8FF;
+            background-image: linear-gradient( 92.7deg,  rgba(245,212,212,1) 8.5%, rgba(252,251,224,1) 90.2% );
         }
 
         img {

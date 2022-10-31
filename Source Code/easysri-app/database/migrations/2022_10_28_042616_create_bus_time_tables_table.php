@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bus_time_tables', function (Blueprint $table) {
-            $table->string('route_id')->primary();
+            $table->id();
+            $table->string('route_id');
             $table->string('dep')->nullable();
             $table->time('dep_time')->nullable();
             $table->string('arr')->nullable();
