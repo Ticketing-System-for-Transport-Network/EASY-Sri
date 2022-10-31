@@ -7,7 +7,7 @@ use domain\Facades\BusTimeInsertFacade;
 use Illuminate\Http\Request;
 use App\Http\Requests\BusTimeTableFormRequest;
 
-class BusTimeInsertController extends Controller
+class BusTimeInsertController extends ParentController
 {
     public function bustimeinsertview()
     {

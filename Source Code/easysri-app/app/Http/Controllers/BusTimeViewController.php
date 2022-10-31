@@ -6,7 +6,7 @@ use App\Models\BusTimeTable;
 use domain\Facades\BusTimeViewFacade;
 use Illuminate\Http\Request;
 
-class BusTimeViewController extends Controller
+class BusTimeViewController extends ParentController
 {
     public function bustimetableview()
     {

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class OvercrowdNetworkController extends Controller
+class OvercrowdNetworkController extends ParentController
 {
     public function networkview()
     {
