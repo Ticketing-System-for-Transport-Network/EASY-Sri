@@ -18,12 +18,12 @@
         </div>
     @endif
     <div class="container">
-       <h3 style="text-align: center"> Hello {{ $name }},<span class="wave">👋</span></h3>
+       <h3 style="text-align: center;font-size:40px"> Hello {{ $name }},<span class="wave">👋</span></h3>
         {{-- <h4>Hello {{ $udata->Fname}} {{ $udata->Lname}},</h4> --}}
-        <h1 style="color: rgb(14, 138, 96);text-align:center;">Welcome to Easy-sri</h1>
+        <h1 style="color: rgb(14, 138, 96);text-align:center;font-size:80px">Welcome to Easy-sri</h1>
         <div class="userdetails">
-            <div class="space" style="padding-top: 5vh"> </div>
-            <h1>User Details</h1>
+            <div class="space" style="padding-top: 10vh"> </div>
+            <h1>. . . User Details . . . </h1>
             @if ($totalPrice > 0)
                 @foreach ($userdetails as $udata)
         </div>
