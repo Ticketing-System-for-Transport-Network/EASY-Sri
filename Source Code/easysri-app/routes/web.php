@@ -17,6 +17,11 @@ use App\Http\Controllers\OvercrowdNetworkController;
 use App\Http\Controllers\InvalidTicketController;
 
 
+//home dashboard
+Auth::routes();
+Route::get('/dashboard', [UserPagesController::class, 'indexdashboard'])->name('dashboard'); 
+
+
 //Admin-Dashboard
 Route::get('/admindashboard', [AdminDashboardController::class, 'dashboardview'])->name('admindashboard');
 
@@ -32,22 +37,30 @@ Route::prefix('/bustimeinsert')->group(function () {
 
 
 
-Auth::routes();
-Route::get('/dashboard', [UserPagesController::class, 'indexdashboard'])->name('dashboard'); 
 
 
 //User Dashboard
 Route::get('/', [Esay_SriHomeController::class, 'indexuserdashboard'])->name('userdashboard');
 
 //User Purchase
-Route::get('/userpurchase', [UserPagesController::class, 'indexuserpurchase'])->name('userpurchase');
-//save top-up purchase
-Route::post('/savetopup', [UserPaymentsController::class, 'storetopup'])->name('storeusertopup');
+
+    Route::get('/userpurchase', [UserPagesController::class, 'indexuserpurchase'])->name('userpurchase');
+    Route::post('/savetopup', [UserPaymentsController::class, 'storetopup'])->name('storeusertopup');
+    Route::post('/updateUser/{userregid}', [UserRegandTopupController::class, 'updateUser'])->name('updateUser');
+    
 
 //User Reg and top-up
-Route::get('/userRegandTopup', [UserPagesController::class, 'indexuserRegandTopup'])->name('userRegandTopup');
-//user reg and top up store
-Route::post('/saveuser', [UserRegandTopupController::class, 'storeuser'])->name('storeuserreg');
+
+    Route::get('/userRegandTopup', [UserPagesController::class, 'indexuserRegandTopup'])->name('userRegandTopup');
+    Route::post('/saveuser', [UserRegandTopupController::class, 'storeuser'])->name('storeuserreg');
+
+
+//User timetable
+Route::get('/userschedule', [UserPagesController::class, 'indexuseruserschedule'])->name('useruserschedule');
+
+//userfare display
+Route::get('/userfare', [UserPagesController::class, 'indexuserfare'])->name('userfare');
+
 
 
 
@@ -71,21 +84,7 @@ Route::get('/ticketview', [InvalidTicketController::class, 'checkvalid'])->name(
 
 
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
