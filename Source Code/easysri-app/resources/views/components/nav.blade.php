@@ -12,10 +12,10 @@
             <a class="func-link" href="{{ route('userpurchase') }}">Top-UP</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="#">Maps & Routes</a>
+            <a class="func-link" href="{{ route('useruserschedule') }}">Schedule</a>
           </li>
           <li class="nav-item">
-            <a class="func-link" href="#">Fares</a>
+            <a class="func-link" href="{{ route('userfare') }}">Fares</a>
           </li>
           
           @if (Auth::user())
@@ -23,7 +23,7 @@
           <form method="POST" action="{{ route('logout') }}" x-data>
             @csrf
             <li class="nav-item">
-            <x-jet-dropdown-link  class="func-link" style="margin-left: 935px" href="{{ route('logout') }}"
+            <x-jet-dropdown-link  class="func-link" style="margin-left: 1030px" href="{{ route('logout') }}"
                      @click.prevent="$root.submit();">
                 {{ __('Log Out') }}
             </x-jet-dropdown-link > </li>
