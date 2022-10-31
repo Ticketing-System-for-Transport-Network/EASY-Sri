@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\UserRegTopup;
 use App\Models\Userpayment;
+use App\Models\BusTimeTable;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +37,9 @@ class UserPagesController extends ParentController
     }
 
     public function indexuseruserschedule(){
-        return view('pages.user.userschedule');
+
+        $timetable = BusTimeTable::all();
+        return view('pages.user.userschedule',compact('timetable'));
     }
     public function indexuserfare(){
         return view('pages.user.userfares');

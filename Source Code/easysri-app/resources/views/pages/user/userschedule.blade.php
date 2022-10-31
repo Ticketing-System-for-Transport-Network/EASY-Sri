@@ -13,7 +13,7 @@
             <th scope="col">Departure Time </th>
             <th scope="col">Arrival Place</th> 
             <th scope="col">Arrival Time</th>
-            <th scope="col">Distance</th>
+            <th scope="col">Distance (km)</th>
             <th scope="col">Time Taken </th>
             <th scope="col">Bus Type</th>
             <th scope="col">Service Type</th>
@@ -22,12 +22,22 @@
           </tr>
         </thead>
         <tbody>
+          @foreach ($timetable as $route)
           <tr>
-            <th scope="row"></th>
-            <td></td>
-            <td></td>
-            <td></td>
+            <th>{{ $route->route_id }}</th>
+            <td>{{ $route->dep }}</td>
+            <td>{{ $route->dep_time }}</td>
+            <td>{{ $route->arr }}</td>
+            <td>{{ $route->arr_time }}</td>
+            <td>{{ $route->dis }}</td>
+            <td>{{ $route->dis_time }}</td>
+            <td>{{ $route->bus_t }}</td>
+            <td>{{ $route->ser_t }}</td>
+            <td>{{ $route->no_bus }}</td>
+            <td>{{ $route->charge }}</td>
           </tr>
+          @endforeach
+          
         </tbody>
       </table>
 
