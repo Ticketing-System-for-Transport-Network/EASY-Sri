@@ -45,22 +45,24 @@ Route::get('/bustimeview', [BusTimeViewController::class, 'busview'])->name('bus
 Route::get('/', [Esay_SriHomeController::class, 'indexuserdashboard'])->name('userdashboard');
 
 //User Purchase
-Route::prefix('/payments')->group(function () {
+
     Route::get('/userpurchase', [UserPagesController::class, 'indexuserpurchase'])->name('userpurchase');
     Route::post('/savetopup', [UserPaymentsController::class, 'storetopup'])->name('storeusertopup');
-});
+    Route::post('/updateUser/{userregid}', [UserRegandTopupController::class, 'updateUser'])->name('updateUser');
+    
 
 //User Reg and top-up
-Route::prefix('/register')->group(function () {
+
     Route::get('/userRegandTopup', [UserPagesController::class, 'indexuserRegandTopup'])->name('userRegandTopup');
     Route::post('/saveuser', [UserRegandTopupController::class, 'storeuser'])->name('storeuserreg');
-});
+
 
 //User timetable
 Route::get('/userschedule', [UserPagesController::class, 'indexuseruserschedule'])->name('useruserschedule');
 
 //userfare display
 Route::get('/userfare', [UserPagesController::class, 'indexuserfare'])->name('userfare');
+
 
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRegandTopupRequestForm;
+use App\Http\Requests\UserUpdateRequestForm;
 use App\Models\UserRegTopup;
 use App\Models\Userpayment;
 use Carbon\Carbon;
@@ -46,4 +47,24 @@ class UserRegandTopupController extends ParentController
       return redirect()->back()->with('message', 'somthing went wrong' . $ex);
     }
   }
+
+  public function updateUser(UserUpdateRequestForm $request, $userregid){
+    $UserRegTopupObj  = UserRegTopup::find($userregid);
+
+    $UserRegTopupObj->Fname = $request->Fname;
+    $UserRegTopupObj->Lname = $request->Lname;
+    $UserRegTopupObj->Address = $request->Address;
+    $UserRegTopupObj->MobNo = $request->MobNo;
+
+    //  dd($UserRegTopupObj);
+    // $UserRegTopupObj->save();
+    try {
+      $data = $request->validated();
+      $UserRegTopupObj->save();
+      return redirect()->back()->with('message', 'Easy-Sri Account Updated Successfully');
+    } catch (Exception $ex) {
+      return redirect()->back()->with('message', 'somthing went wrong' . $ex);
+    }
+  
+}
 }

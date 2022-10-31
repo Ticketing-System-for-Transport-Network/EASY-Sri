@@ -33,8 +33,7 @@ class UserPaymentsController extends ParentController
     $UserpaymentObj->amount = $request->amount;
 
     // dd($UserpaymentObj);
-
-    //   $UserRegTopupObj->save();
+    // $UserRegTopupObj->save();
 
     try {
       $data = $request->validated();
@@ -44,4 +43,6 @@ class UserPaymentsController extends ParentController
       return redirect()->back()->with('message', 'somthing went wrong' . $ex);
     }
   }
+
+  
 }

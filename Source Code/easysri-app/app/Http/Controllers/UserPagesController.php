@@ -9,10 +9,10 @@ use App\Models\BusTimeTable;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use domain\Facades\UserPagesFacade;
 class UserPagesController extends ParentController
 {
     public function indexuserRegandTopup(){
-       
         return view('pages.user.userRegandTopup');
     }
 
@@ -28,7 +28,6 @@ class UserPagesController extends ParentController
     }
     public function indexdashboard(){
         $role = Auth::user()->role;
-
         if($role == '1'){
             return view('pages.admin.AdminDashboard');
         }else{
@@ -38,10 +37,10 @@ class UserPagesController extends ParentController
 
     public function indexuseruserschedule(){
 
-        $timetable = BusTimeTable::all();
-        return view('pages.user.userschedule',compact('timetable'));
+        $response['timetable'] =BusTimeTable::all();
+        return view('pages.user.userschedule')->with($response);
     }
     public function indexuserfare(){
-        return view('pages.user.userfares');
+         return view('pages.user.userfares');
     }
 }
