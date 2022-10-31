@@ -23,7 +23,7 @@ Route::get('/dashboard', [UserPagesController::class, 'indexdashboard'])->name('
 
 
 //Admin-Dashboard
-Route::get('/admindashboard', [AdminDashboardController::class, 'dashboardview'])->name('admindashboard');
+// Route::get('/admindashboard', [AdminDashboardController::class, 'dashboardview'])->name('admindashboard');
 
 
 

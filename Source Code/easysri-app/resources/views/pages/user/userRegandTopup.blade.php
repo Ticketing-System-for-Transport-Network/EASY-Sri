@@ -8,7 +8,7 @@
     <div class="hero-image">
 
         <img src="../logo.png" style="width:600px;height:500px;display:block;margin:auto;padding: auto;" alt="space logo">
-        <h1 style="color: #FFA500; text-align:center;">Set Up Your Easy-Sri Account</h1>
+        <h1 style="color: #FFA500; text-align:center;font-size:80px">Set Up Your Easy-Sri Account</h1>
 
         @if ($errors->any())
         @endif
