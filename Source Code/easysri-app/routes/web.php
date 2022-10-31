@@ -13,6 +13,7 @@ use App\Http\Controllers\Esay_SriHomeController;
 
 use App\Http\Controllers\BusTimeInsertController;
 use App\Http\Controllers\BusTimeViewController;
+use App\Http\Controllers\OvercrowdNetworkController;
 
 
 //Admin-Dashboard
@@ -62,7 +63,10 @@ Route::prefix('/bustimeview')->group(function () {
     Route::post('/{bus_id}/update', [BusTimeViewController::class, "update"])->name('bustimeview.update');
     Route::get('/{bus_id}/delete', [BusTimeViewController::class, "delete"])->name('bustimeview.delete');
     Route::get('/{bus_id}/done', [BusTimeViewController::class, "done"])->name('bustimeview.done');
-}); 
+});
+
+//Overcrowd-Networks-View
+Route::get('/crowdview', [OvercrowdNetworkController::class, 'networkview'])->name('crowdview');
 
 
 // Route::middleware([
