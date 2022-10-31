@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\BusTimeInsertController;
 use App\Http\Controllers\BusTimeViewController;
 use App\Http\Controllers\OvercrowdNetworkController;
+use App\Http\Controllers\InvalidTicketController;
 
 
 //Admin-Dashboard
@@ -27,4 +28,7 @@ Route::prefix('/bustimeview')->group(function () {
 
 //Overcrowd-Networks-View
 Route::get('/crowdview', [OvercrowdNetworkController::class, 'networkview'])->name('crowdview');
+
+//Invalid-Tickets-View
+Route::get('/ticketview', [InvalidTicketController::class, 'checkvalid'])->name('ticketview');
 

@@ -61,13 +61,13 @@
                 </div>
                 <div class="contents">
                     <div>
-                        <h3>Valid/Invalid Tickets</h3>
+                        <h3>Invalid Tickets</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                             the
                             industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                             type
                             and scrambled it to make a type specimen book.</p>
-                        <a href="#">Read More</a>
+                        <a href="{{ route('ticketview') }}">Read More</a>
                     </div>
                 </div>
             </div>
