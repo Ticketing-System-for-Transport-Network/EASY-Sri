@@ -33,7 +33,7 @@ class UserPagesController extends ParentController
         $role = Auth::user()->role;
 
         if($role == '1'){
-            return view('pages/admin/AdminDashboard');
+            return view('pages.admin.admindashboard');
         }else{
             return view('pages.user.userdashboard');
         }
