@@ -31,10 +31,6 @@ Route::prefix('/bustimeinsert')->group(function () {
 });
 
 
-Route::get('/bustimeview', [BusTimeViewController::class, 'busview'])->name('bustimeview');
-
-
-
 
 Auth::routes();
 Route::get('/dashboard', [UserPagesController::class, 'indexdashboard'])->name('dashboard'); 
@@ -89,3 +85,7 @@ Route::get('/ticketview', [InvalidTicketController::class, 'checkvalid'])->name(
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -8,7 +8,7 @@
         <h1 class="page-title">Invalid Card Details</h1>
     </div>
     <div class="container">
-        <form>
+        <form class="from-content">
             <div class="row justify-content-evenly">
                 <div class="form-group">
                     <input type="search" name="search" class="form-control form-control-lg" placeholder="Search Card Number..." />
@@ -218,29 +218,29 @@
             font-weight: 1000;
         }
 
-        .container {
+        .containers {
             padding-bottom: 6vh;
         }
 
-        .container form {
+        .from-content {
             display: flex;
             padding-top: 10vh;
             margin-left: 40vh;
             padding-bottom: 10vh;
         }
 
-        .container .form-group {
+        .form-group {
             display: flex;
             height: 50px;
         }
 
-        .container .form-group input {
+        .form-group input {
             width: 45vh;
             background-color: #fff;
             border: 1px solid #000;
         }
 
-        .container .btn-group {
+        .btn-group {
             margin-left: 100px;
         }
 
