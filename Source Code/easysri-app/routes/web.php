@@ -20,8 +20,13 @@ use App\Http\Controllers\CardController;
 Auth::routes();
 Route::get('/dashboard', [UserPagesController::class, 'indexdashboard'])->name('dashboard'); 
 
+
+
+
+
 //Admin-Dashboard
 Route::get('/admindashboard', [AdminDashboardController::class, 'dashboardview'])->name('admindashboard');
+
 
 //Bus-Time-Insert
 Route::prefix('/bustimeinsert')->group(function () {

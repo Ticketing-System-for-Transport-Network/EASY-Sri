@@ -183,16 +183,9 @@
 @endsection
 @push('css')
     <style>
-        /* .hero-image {
-     background-image: url("images/transport02.jpg");
-      background-color: #3d3838;
-      height: auto;
-     
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-    } */
+       body {
+            background-image: linear-gradient( 92.7deg,  rgba(245,212,212,1) 8.5%, rgba(252,251,224,1) 90.2% );
+        }
 
         .alert {
             background: #ffdb9b;

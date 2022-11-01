@@ -12,7 +12,7 @@
           <a class="func-link" href="{{ route('userpurchase') }}">Top-UP</a>
         </li>
         <li class="nav-item">
-          <a class="func-link" href="{{ route('useruserschedule') }}">Maps & Routes</a>
+          <a class="func-link" href="{{ route('useruserschedule') }}">Schedule</a>
         </li>
         <li class="nav-item">
           <a class="func-link" href="{{ route('userfare') }}">Fares</a>

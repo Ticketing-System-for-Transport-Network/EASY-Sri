@@ -17,6 +17,7 @@
             </div>
         </div>
     </header>
+
     <section class="main">
         <video src="video/Video.mp4" autoplay loop muted=""></video>
         <img src="mask.jpg" class="mask">
@@ -34,7 +35,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="{{ route('userRegandTopup') }}">Apply Easy-Sri</a></li>
         <li><a href="{{ route('userpurchase') }}">Top-UP</a></li>
-        <li><a href="{{ route('useruserschedule') }}">Maps & Routes</a></li>
+        <li><a href="{{ route('useruserschedule') }}">Schedule</a></li>
         <li><a href="{{ route('userfare') }}">Fares</a></li>
         @if (Auth::user())
             <form method="POST" action="{{ route('logout') }}" x-data>
@@ -54,7 +55,9 @@
 @endsection
 
 @push('css')
+
     <style>
+       
         :root {
             --black: #333;
             --white: #fff;
