@@ -12,6 +12,7 @@ use App\Http\Controllers\OvercrowdNetworkController;
 use App\Http\Controllers\InvalidTicketController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\CardController;
 
 
 
@@ -67,6 +68,9 @@ Route::get('/financeview', [FinanceController::class, 'calculate'])->name('finan
 
 //Report-View
 Route::get('/reportview', [ReportController::class, 'generate'])->name('reportview');
+
+//Smart-Card-View
+Route::get('/cardview', [CardController::class, 'view'])->name('cardview');
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
