@@ -240,7 +240,11 @@
 @endpush
 
 @push('css')
+
     <style>
+         body {
+            background-image: linear-gradient( 92.7deg,  rgba(245,212,212,1) 8.5%, rgba(252,251,224,1) 90.2% );
+        }
 .wave {
   animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
   animation-duration: 2.5s;        /* Change to speed up or slow down */
