@@ -2,7 +2,7 @@
 
 @section('content')
     <header>
-        <a href="" class="logo">Easy Sri</a>
+        <a href="{{ route('cardview') }}" class="logo">Easy Sri</a>
         <div class="logo-img">
             <img src="logo.png" alt="logos">
         </div>
@@ -85,13 +85,14 @@
 
         header .logo {
             position: relative;
-            display: inline-flex;
+            display: block;
             color: var(--black);
             text-decoration: none;
             font-size: 2em;
             font-weight: 700;
             letter-spacing: 0.05em;
             text-transform: uppercase;
+            cursor: pointer;
         }
 
         .righSide {
