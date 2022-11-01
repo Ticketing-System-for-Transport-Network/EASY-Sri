@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class InvalidTicketController extends Controller
+class InvalidTicketController extends ParentController
 {
     public function checkvalid()
     {
