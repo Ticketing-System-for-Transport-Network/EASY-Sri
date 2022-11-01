@@ -45,6 +45,8 @@ class UserPagesController extends ParentController
         return view('pages.user.userschedule')->with($response);
     }
     public function indexuserfare(){
-         return view('pages.user.userfares');
+        $lastfare=BusTimeTable::all()->last();//last bus fare per km
+    //    dd($lastfare);
+       return view('pages.user.userfares')->with('lastfare',$lastfare); 
     }
 }

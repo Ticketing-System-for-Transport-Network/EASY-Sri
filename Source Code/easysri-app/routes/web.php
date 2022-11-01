@@ -22,8 +22,8 @@ Auth::routes();
 Route::get('/dashboard', [UserPagesController::class, 'indexdashboard'])->name('dashboard'); 
 
 
-//Admin-Dashboard
-// Route::get('/admindashboard', [AdminDashboardController::class, 'dashboardview'])->name('admindashboard');
+// Admin-Dashboard
+Route::get('/admindashboard', [AdminDashboardController::class, 'dashboardview'])->name('admindashboard');
 
 
 
