@@ -11,6 +11,7 @@ class ReportController extends ParentController
     public function generate()
     {
         $response['finances'] = FinanceViewFacade::all();
-        return view('pages.admin.report')->with($response);
+        $totalCharge = Finance::sum('charge');
+        return view('pages.admin.report',compact('totalCharge'))->with($response);
     }
 }

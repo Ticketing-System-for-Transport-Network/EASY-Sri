@@ -53,7 +53,9 @@
             </table>
         </div>
     </div>
-    <h2>Total Amount: {{ $totalCharge }}</h2>
+    <div class="total-charge">
+        <h2>Total Charge: Rs.{{ $totalCharge }}</h2>
+    </div>
     <div class="text-button">
         <a title="Redirects to admin dashboard interface." href="{{ route('admindashboard') }}">
             << Go to dashboard</a>
@@ -782,6 +784,18 @@
             text-decoration: none;
             font-style: italic;
             margin-left: 120px
+        }
+
+        .total-charge {
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+        }
+
+        .total-charge h2 {
+            justify-content: center;
+            text-align: center;
+            font-size: 50px;
+            color: #ffa502;
         }
     </style>
 @endpush
