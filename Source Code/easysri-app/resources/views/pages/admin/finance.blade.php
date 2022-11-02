@@ -29,8 +29,6 @@
                         </th>
                     </tr>
                 </thead>
-
-
                 @foreach ($finances as $finance)
                     <tbody>
                         <tr>
@@ -55,6 +53,7 @@
             </table>
         </div>
     </div>
+    <h2>Total Amount: {{ $totalCharge }}</h2>
     <div class="text-button">
         <a title="Redirects to admin dashboard interface." href="{{ route('admindashboard') }}">
             << Go to dashboard</a>
