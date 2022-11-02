@@ -11,6 +11,7 @@ class FinanceController extends ParentController
     public function calculate()
     {
         $response['finances'] = FinanceViewFacade::all();
-        return view('pages.admin.finance')->with($response);
+        $totalCharge = Finance::sum('charge');
+        return view('pages.admin.finance',compact('totalCharge'))->with($response);
     }
 }
