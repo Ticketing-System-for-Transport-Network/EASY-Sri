@@ -40,189 +40,37 @@
                             <h1>Route No</h1>
                         </th>
                         <th scope="col">
-                            <h1 style="color: #ffa502;">Arrival</h1>
+                            <h1 style="color: #ffa502;">Departure</h1>
                         </th>
                         <th scope="col">
                             <h1>Date</h1>
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">
-                            <h3>123458</h3>
-                        </th>
-                        <td>
-                            <h3>Chanaka Rajapaksha</h3>
-                        </td>
-                        <td>
-                            <h3>C001</h3>
-                        </td>
-                        <td>
-                            <h3>Malabe</h3>
-                        </td>
-                        <td>
-                            <h3>2022/08/25</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <h3>123458</h3>
-                        </th>
-                        <td>
-                            <h3>Chanaka Rajapaksha</h3>
-                        </td>
-                        <td>
-                            <h3>C001</h3>
-                        </td>
-                        <td>
-                            <h3>Malabe</h3>
-                        </td>
-                        <td>
-                            <h3>2022/08/25</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <h3>123458</h3>
-                        </th>
-                        <td>
-                            <h3>Chanaka Rajapaksha</h3>
-                        </td>
-                        <td>
-                            <h3>C001</h3>
-                        </td>
-                        <td>
-                            <h3>Malabe</h3>
-                        </td>
-                        <td>
-                            <h3>2022/08/25</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <h3>123458</h3>
-                        </th>
-                        <td>
-                            <h3>Chanaka Rajapaksha</h3>
-                        </td>
-                        <td>
-                            <h3>C001</h3>
-                        </td>
-                        <td>
-                            <h3>Malabe</h3>
-                        </td>
-                        <td>
-                            <h3>2022/08/25</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <h3>123458</h3>
-                        </th>
-                        <td>
-                            <h3>Chanaka Rajapaksha</h3>
-                        </td>
-                        <td>
-                            <h3>C001</h3>
-                        </td>
-                        <td>
-                            <h3>Malabe</h3>
-                        </td>
-                        <td>
-                            <h3>2022/08/25</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <h3>123458</h3>
-                        </th>
-                        <td>
-                            <h3>Chanaka Rajapaksha</h3>
-                        </td>
-                        <td>
-                            <h3>C001</h3>
-                        </td>
-                        <td>
-                            <h3>Malabe</h3>
-                        </td>
-                        <td>
-                            <h3>2022/08/25</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <h3>123458</h3>
-                        </th>
-                        <td>
-                            <h3>Chanaka Rajapaksha</h3>
-                        </td>
-                        <td>
-                            <h3>C001</h3>
-                        </td>
-                        <td>
-                            <h3>Malabe</h3>
-                        </td>
-                        <td>
-                            <h3>2022/08/25</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <h3>123458</h3>
-                        </th>
-                        <td>
-                            <h3>Chanaka Rajapaksha</h3>
-                        </td>
-                        <td>
-                            <h3>C001</h3>
-                        </td>
-                        <td>
-                            <h3>Malabe</h3>
-                        </td>
-                        <td>
-                            <h3>2022/08/25</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <h3>123458</h3>
-                        </th>
-                        <td>
-                            <h3>Chanaka Rajapaksha</h3>
-                        </td>
-                        <td>
-                            <h3>C001</h3>
-                        </td>
-                        <td>
-                            <h3>Malabe</h3>
-                        </td>
-                        <td>
-                            <h3>2022/08/25</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <h3>123458</h3>
-                        </th>
-                        <td>
-                            <h3>Chanaka Rajapaksha</h3>
-                        </td>
-                        <td>
-                            <h3>C001</h3>
-                        </td>
-                        <td>
-                            <h3>Malabe</h3>
-                        </td>
-                        <td>
-                            <h3>2022/08/25</h3>
-                        </td>
-                    </tr>
-                </tbody>
+                @foreach ($tickets as $ticket)
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <h3>{{ $ticket->card_no }}</h3>
+                            </th>
+                            <td>
+                                <h3>{{ $ticket->c_name }}</h3>
+                            </td>
+                            <td>
+                                <h3>{{ $ticket->route_id }}</h3>
+                            </td>
+                            <td>
+                                <h3>{{ $ticket->arr }}</h3>
+                            </td>
+                            <td>
+                                <h3>{{ $ticket->i_date }}</h3>
+                            </td>
+                        </tr>
+                    </tbody>
+                @endforeach
             </table>
         </div>
     </div>
-
     <div class="text-button">
         <a title="Redirects to admin dashboard interface." href="{{ route('admindashboard') }}">
             << Go to dashboard</a>
