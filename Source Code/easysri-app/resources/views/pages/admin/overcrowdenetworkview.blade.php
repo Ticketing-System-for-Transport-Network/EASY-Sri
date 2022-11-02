@@ -534,7 +534,7 @@
         .from-content {
             display: flex;
             padding-top: 10vh;
-            margin-left: 10vh;
+            margin-left: 40vh;
             padding-bottom: 10vh;
         }
 
@@ -544,13 +544,13 @@
         }
 
         .form-group input {
-            width: 45vh;
+            width: 55vh;
             background-color: #fff;
             border: 2px solid #000;
         }
 
         .btn-group {
-            margin-left: 100px;
+            margin-left: 50px;
         }
 
         .text-button a {
