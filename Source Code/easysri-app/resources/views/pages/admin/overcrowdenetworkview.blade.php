@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <div class="col-7">
                             <input type="search" name="search" class="form-control form-control-lg"
-                                placeholder="Select Date..." />
+                                placeholder="Select Date & Route No..." />
                         </div>
                     </div>
                 </div>
