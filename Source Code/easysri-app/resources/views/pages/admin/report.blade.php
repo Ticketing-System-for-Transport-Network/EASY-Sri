@@ -128,7 +128,7 @@
                     </svg></div>
                 <div class="w3-clear"></div>
                 <h6>Total Income Of the Day</h6>
-                <h4>Rs. 120000.50</h4>
+                <h4>Rs.{{ $totalCharge }}</h4>
             </div>
         </div>
         <div class= "col-lg-6"">
@@ -403,7 +403,7 @@
         .graph {
             padding-top: 10vh;
             padding-bottom: 5vh;
-            margin-left: 500px;
+            margin-left: 350px;
         }
 
          .text-button a {
@@ -437,7 +437,7 @@
             ?>
         ]);
         var options = {
-            width: 1390,
+            width: 1200,
             height: 600,
             colors: ['#1DE9B6', '#00E5FF'],
             bars: 'vertical', // Required for Material Bar Charts.

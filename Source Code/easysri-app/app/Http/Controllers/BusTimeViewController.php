@@ -12,6 +12,7 @@ class BusTimeViewController extends ParentController
     {
         $response['buss'] = BusTimeViewFacade::all();
         return view('pages.admin.bustimetableview')->with($response);
+
     }
 
     public function delete($bus_id)
